@@ -11,6 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fontsource/gfs-didot": "^5.0.8",
+    "@fontsource/lato": "^5.0.18",
     "vue": "^3.4.15"
   },
   "devDependencies": {
