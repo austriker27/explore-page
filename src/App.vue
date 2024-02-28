@@ -2,10 +2,7 @@
   <main class="relative min-h-screen w-screen grid grid-cols-12 gap-4 p-9 selection:bg-red-800 selection:text-red-100 debug-screens">
     <div aria-hidden class="bg-red-900 h-full w-[30%] absolute left-0 top-0"></div>
     <div aria-hidden class="h-full absolute w-[70%] left-[30%]">
-      <img
-        :src="forestPic"
-        alt="A beatuiful forest"
-        class="h-full w-full object-cover"/>
+        <LazyImage thumbhash="2GkODYKIiHV/iHh3iHiHd1gloAZA" :image="forestPic" class="h-full w-full object-cover" />
     </div>
 
 
@@ -67,12 +64,13 @@
 <script setup>
 import { ref } from 'vue'
 
+import LazyImage from '@/components/LazyImage.vue';
 import PlusMarkIcon from '@/components/icons/Plus.vue';
 import IconLink from '@/components/IconLink.vue';
 import Modal from '@/components/Modal.vue';
 import LinkButton from '@/components/LinkButton.vue';
 
-import forestPic from '@/assets/forest.png'
+import forestPic from '@/assets/forest.jpg'
 
 
 const showModal = ref(false)
