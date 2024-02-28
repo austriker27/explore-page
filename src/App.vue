@@ -72,7 +72,7 @@ import { ref } from 'vue'
 import PlusMarkIcon from '@/components/icons/Plus.vue';
 import IconLink from '@/components/IconLink.vue';
 import Modal from '@/components/Modal.vue';
-import Button from '@/components/Button.vue';
+import LinkButton from '@/components/LinkButton.vue';
 
 import forestPic from '@/assets/forest.png'
 
@@ -81,9 +81,7 @@ const showModal = ref(false)
 const buttonClicked = ref(false)
 const showModalContent = ref(false)
 
-console.log(showModal)
-
-const handleModalButtonClick = () => {
+const handleModalOpen = () => {
   buttonClicked.value = true;
   setTimeout(() => {
     showModal.value = true
@@ -92,12 +90,15 @@ const handleModalButtonClick = () => {
   }, 250);
 }
 
+const handleCloseModal = () => {
+  showModalContent.value = false;
+  setTimeout(() => {
+    showModal.value = false;
+  }, 500);
+}
+
 
 const socialMediaLinks = [
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/'
-  },
   {
     name: 'Facebook',
     url: 'https://facebook.com/'
