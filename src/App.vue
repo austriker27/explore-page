@@ -1,8 +1,13 @@
 <template>
   <main class="relative min-h-screen w-screen grid grid-cols-12 gap-4 p-9 selection:bg-red-800 selection:text-red-100 debug-screens">
     <div aria-hidden class="bg-red-900 h-full w-[30%] absolute left-0 top-0"></div>
-    <div aria-hidden class="h-full absolute w-[70%] left-[30%]">
-        <LazyImage thumbhash="2GkODYKIiHV/iHh3iHiHd1gloAZA" :image="forestPic" class="h-full w-full object-cover" />
+    <div aria-hidden class="h-full absolute w-[70%] left-[30%] bg-red-900">
+        <LazyImage
+          alt="Forest image"
+          thumbhash="2GkODYKIiHV/iHh3iHiHd1gloAZA"
+          :image="forestPic"
+          class="h-full w-full object-cover"
+        />
     </div>
 
 
