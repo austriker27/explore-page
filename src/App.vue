@@ -32,7 +32,7 @@
         </div>
       </Transition>
       <Transition name="grow">
-        <Modal
+        <CustomModal
           v-if="showModal"
           class="absolute bottom-0 left-0 z-50 will-change-transform"
           :showModal="showModal"
@@ -49,7 +49,7 @@
               <LinkButton label="Read more" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
             </div>
           </Transition>
-        </Modal>
+        </CustomModal>
       </Transition>
     </div>
 
@@ -70,9 +70,9 @@
 import { ref } from 'vue'
 
 import LazyImage from '@/components/LazyImage.vue';
-import PlusMarkIcon from '@/components/icons/Plus.vue';
+import PlusMarkIcon from '@/components/icons/IconPlus.vue';
 import IconLink from '@/components/IconLink.vue';
-import Modal from '@/components/Modal.vue';
+import CustomModal from '@/components/CustomModal.vue';
 import LinkButton from '@/components/LinkButton.vue';
 
 import forestPic from '@/assets/forest.jpg'
