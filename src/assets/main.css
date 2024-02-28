@@ -1,5 +1,4 @@
-@import './base.css';
-@import './vendor/sal.css';
+@import './transitions.css';
 
 @tailwind base;
 @tailwind components;
