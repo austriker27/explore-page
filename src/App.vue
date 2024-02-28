@@ -1,24 +1,22 @@
 <template>
-  <main class="relative h-screen w-screen grid grid-cols-12 gap-4 p-9 selection:bg-red-800 selection:text-red-100 debug-screens">
-    <div data-sal="fade" data-sal-easing="ease-out-back" aria-hidden class="bg-red-900 h-full w-[30%] absolute left-0 top-0"></div>
-    <div data-sal="fade" data-sal-easing="ease-out-back" aria-hidden class="h-full absolute w-[70%] left-[30%]">
+  <main class="relative min-h-screen w-screen grid grid-cols-12 gap-4 p-9 selection:bg-red-800 selection:text-red-100 debug-screens">
+    <div aria-hidden class="bg-red-900 h-full w-[30%] absolute left-0 top-0"></div>
+    <div aria-hidden class="h-full absolute w-[70%] left-[30%]">
       <img
         :src="forestPic"
-        alt="A beautiful landscape"
+        alt="A beatuiful forest"
         class="h-full w-full object-cover"/>
     </div>
 
 
-    <div class="z-10 relative col-start-2 col-span-10 lg:col-span-8 lg:col-start-3 flex items-end mb-36"  data-sal="fade"
-    data-sal-delay="300"
-    data-sal-easing="ease-out-back">
+    <div class="z-10 relative col-span-11 sm:col-start-2 sm:col-span-10 md:col-start-2 md:col-span-10 xl:col-span-8 xl:col-start-2 flex items-end mb-12 sm:mb-24 md:mb-36">
       <Transition name="fade">
         <div v-if="!showModal" class="absolute bottom-0 left-0 will-change-transform flex flex-col gap-4 sm:gap-0">
-          <h1 class="text-8xl sm:text-9xl md:text-[10rem] lg:text-[14rem] font-bold font-serif text-white">
+          <h1 class="text-7xl sm:text-9xl md:text-[10rem] lg:text-[14rem] font-bold font-serif text-white">
             Explore
           </h1>
           <button
-            @click="handleModalButtonClick()"
+            @click="handleModalOpen()"
             class="flex items-center gap-4 md:gap-[0.72rem] focus-visible:ring-4 focus-visible:ring-white focus-visible:outline-none focus-visible:ring-offset-4 transition-opacity hover:opacity-80 duration-150 ease-out"
           >
             <PlusMarkIcon
@@ -36,17 +34,17 @@
           v-if="showModal"
           class="absolute bottom-0 left-0 z-50 will-change-transform"
           :showModal="showModal"
-          @closeModal="showModal = false;"
+          @closeModal="handleCloseModal()"
         >
           <Transition name="fade-in-right" appear>
             <div v-if="showModalContent" class="flex flex-col gap-4 lg:gap-6">
               <h2 class="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-red-900">
                 Explore
               </h2>
-              <p class="font-sans text-base lg:text-lg tracking-wider leading-5">
+              <p class="font-sans text-sm md:text-base lg:text-lg tracking-wider md:leading-5">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
               </p>
-              <Button label="Read more" @click.prevent="" />
+              <LinkButton label="Read more" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
             </div>
           </Transition>
         </Modal>
