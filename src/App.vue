@@ -12,7 +12,7 @@
 
 
     <div class="z-10 relative col-span-11 sm:col-start-2 sm:col-span-10 md:col-start-2 md:col-span-10 xl:col-span-8 xl:col-start-2 flex items-end mb-12 sm:mb-24 md:mb-36">
-      <Transition name="fade">
+      <Transition name="fade" appear>
         <div v-if="!showModal" class="absolute bottom-0 left-0 will-change-transform flex flex-col gap-4 sm:gap-0">
           <h1 class="text-7xl sm:text-9xl md:text-[10rem] lg:text-[14rem] font-bold font-serif text-white">
             Explore
